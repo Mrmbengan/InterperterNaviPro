@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("InterperterNaviPro")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e39772cc249a9758e85573f377c2e27be8b08910")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+365980c1f9d6c8960bdb5123af108dfc93ab46cd")]
 [assembly: System.Reflection.AssemblyProductAttribute("InterperterNaviPro")]
 [assembly: System.Reflection.AssemblyTitleAttribute("InterperterNaviPro")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
