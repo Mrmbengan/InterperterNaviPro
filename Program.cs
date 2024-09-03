@@ -30,12 +30,13 @@ class Program
     private static double EvaluateSimpleExpression(string expression){
 
         double result = 0;
-        double currentChar = 0;
+        char currentOperator = '+'; //start operator
         double currentNumber = 0;
+        int i = 0;
 
-        for (int i = 0; i < expression.Length; i++){
-            char charexpr = expression[i];
-            if (char.IsDigit(charexpr) || currentChar == '.'){
+        while (i < expression.Length){
+            char currentChar = expression[i];
+            if (char.IsDigit(currentChar) || currentChar == '.'){
                 int startIndex = i;
                 while (i < expression.Length && (char.IsDigit(expression[i]) || expression[i] == '.')){
                     i++;
@@ -43,27 +44,25 @@ class Program
                 currentNumber = double.Parse(expression.Substring(startIndex, i - startIndex));
                 i--; //testar
 
-                if (currentChar == 0){
-                    result = currentNumber;
-                }
-                else if (currentChar == '+'){
+                if (currentOperator == '+'){
                     result += currentNumber;
                 }
-                else if (currentChar == '-'){
+                else if (currentOperator == '-'){
                     result -= currentNumber;
                 }
-                else if (currentChar == '*'){
+                else if (currentOperator == '*'){
                     result *= currentNumber;
                 }
-                else if (currentChar == '/'){
+                else if (currentOperator == '/'){
                     result /= currentNumber;
                 }
+                
             }
             
             
             
         }
-        result += currentNumber;
+        
         return result;
         
     }
