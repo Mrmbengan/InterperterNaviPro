@@ -21,6 +21,8 @@ class Program
 
    private static double Evaluate(string expression)
     {
+        expression = expression.Replace(" ", "");
+
         while (expression.Contains('('))
         {
             int startIndex = expression.LastIndexOf('(');
@@ -31,24 +33,36 @@ class Program
         }
         return EvaluateSimpleExpression(expression);
     }
-    private static double EvaluateSimpleExpression(string expression){
+
+    private static double EvaluateSimpleExpression(string expression)
+    {
 
         double result = 0;
-        char currentOperator = '+'; //start av operatorn
         double currentNumber = 0;
+        char currentOperator = '+'; //start av operatorn
         int i = 0;
 
-        while (i < expression.Length){
+        while (i < expression.Length)
+        {
             char currentChar = expression[i];
-            if (char.IsDigit(currentChar) || currentChar == '.'){
+
+            if (char.IsDigit(currentChar) || currentChar == '.')
+            {
                 int startIndex = i;
-                while (i < expression.Length && (char.IsDigit(expression[i]) || expression[i] == '.')){
+                while (i < expression.Length && (char.IsDigit(expression[i]) || expression[i] == '.'))
+                {
                     i++;
                 }
-                currentNumber = double.Parse(expression.Substring(startIndex, i - startIndex));
-                i--; //testar
+                string numberStr = expression.Substring(startIndex, i - startIndex);
+                if (string.IsNullOrWhiteSpace(numberStr))
+                {
+                    throw new Exception("Invalid number");
+                }
+                currentNumber = double.Parse(numberStr);
+                i--; 
 
-                if (currentOperator == '+'){
+                if (currentOperator == '+')
+                {
                     result += currentNumber;
                 }
                 else if (currentOperator == '-'){
@@ -59,19 +73,54 @@ class Program
                 }
                 else if (currentOperator == '/'){
                     result /= currentNumber;
+                }  
+            }
+            
+            else if (currentChar == '+' || currentChar == '-' || currentChar == '*' || currentChar == '/')
+            {
+                if (currentChar == '*' || currentChar == '/')
+                {
+                    int startIndex = ++i;
+                    while (i < expression.Length && (char.IsDigit(expression[i]) || expression[i] == '.'))
+                    {
+                        i++;
+                    }
+                    string numberStr = expression.Substring(startIndex, i - startIndex);
+                    if (string.IsNullOrWhiteSpace(numberStr))
+                    {
+                        throw new Exception("Invalid number");
+                    }
+                    double nextNumber = double.Parse(numberStr);
+                    i--;
+
+                    if (currentChar == '*')
+                    {
+                        result *= nextNumber;
+                    }
+                    else if (currentChar == '/')
+                    {
+                        result /= nextNumber;
+                    }
                 }
-                
+                else
+                {
+                    currentOperator = currentChar;
+                    currentNumber = 0;
+                }
             }
-            else if (currentChar == '+' || currentChar == '-' || currentChar == '*' || currentChar == '/'){
-                currentOperator = currentChar;
-            }
-            i++;
-            
-            //inte snyggaste men jag tror jag har det nu, men resutatet blir fel :-(
-            
+            i++;  
+        }
+        
+        if (currentOperator == '+')
+        {
+            result += currentNumber;
+        }
+        else if (currentOperator == '-')
+        {
+            result -= currentNumber;
         }
         
         return result;
-        
     }
+    
 }
