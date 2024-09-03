@@ -22,5 +22,3 @@ skall vilket uttryck som helst kunna utvärderas i funktionen. Koden skall vara
 språkoberoende, så referenser till externa bibliotek är inte tillåtna. Det är heller inte 
 tillåtet att använda ChatGPT som informationskälla
 
-källa DataTable.compute: https://stackoverflow.com/questions/36276426/about-the-syntax-of-c-sharp-datatable-compute
-Kom på jag inte får använda detta så bortse från detta men jäkligt smidigt
