@@ -18,41 +18,42 @@ class Program
    public static double EvaluateExpression(string expression)
     {
         double result = 0;
-        int i = 0;
-        while (i < expression.Length){
+        double currentChar = 0;
+        double currentNumber = 0;
+        for (int i = 0; i < expression.Length; i++){
             char charexpr = expression[i];
-            if (charexpr.IsDigits(charexpr)){
+            if (char.IsDigit(charexpr) || currentChar == '.'){
                 int startIndex = i;
-                while (i < expression.Length && expression[i].IsDigits(expression[i])){
+                while (i < expression.Length && (char.IsDigit(expression[i]) || expression[i] == '.')){
                     i++;
                 }
-                double number = double.Parse(expression.Substring(startIndex, i - startIndex));
-
-                if (i < expression.Length && expression[i] == '+'){
-                    i++;
-                    number += double.Parse(expression.Substring(i, expression.Length - i));
-                }
-                else if (i < expression.Length && expression[i] == '-'){
-                    i++;
-                    number -= double.Parse(expression.Substring(i, expression.Length - i));
-                }
-                else if (i < expression.Length && expression[i] == '*'){
-                    i++;
-                    number *= double.Parse(expression.Substring(i, expression.Length - i));
-                }
-                else if (i < expression.Length && expression[i] == '/'){
-                    i++;
-                    number /= double.Parse(expression.Substring(i, expression.Length - i));
-                }
-                result += number;
-            }
-            else{
+                currentNumber = double.Parse(expression.Substring(startIndex, i - startIndex));
                 i++;
+
+                if (currentChar == 0){
+                    result = currentNumber;
+                }
+                else if (currentChar == '+'){
+                    result += currentNumber;
+                }
+                else if (currentChar == '-'){
+                    result -= currentNumber;
+                }
+                else if (currentChar == '*'){
+                    result *= currentNumber;
+                }
+                else if (currentChar == '/'){
+                    result /= currentNumber;
+                }
             }
             
-            //commitar detta så ni ser min struggle, ska testa göra om med for loop
+            
+            
         }
+        result += currentNumber;
         return result;
+        //okej jag tror detta funkar!
+        //nu ska jag få in parenteser innan läggdags :-(
         
     }
 }
