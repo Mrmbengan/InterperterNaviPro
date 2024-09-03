@@ -3,3 +3,13 @@ C:\Users\bengt\OneDrive\Skrivbord\Navipro\InterperterNaviPro\obj\Debug\net8.0\In
 C:\Users\bengt\OneDrive\Skrivbord\Navipro\InterperterNaviPro\obj\Debug\net8.0\InterperterNaviPro.AssemblyInfo.cs
 C:\Users\bengt\OneDrive\Skrivbord\Navipro\InterperterNaviPro\obj\Debug\net8.0\InterperterNaviPro.csproj.CoreCompileInputs.cache
 C:\Users\bengt\OneDrive\Skrivbord\Navipro\InterperterNaviPro\obj\Debug\net8.0\InterperterNaviPro.sourcelink.json
+C:\Users\bengt\OneDrive\Skrivbord\Navipro\InterperterNaviPro\bin\Debug\net8.0\InterperterNaviPro.exe
+C:\Users\bengt\OneDrive\Skrivbord\Navipro\InterperterNaviPro\bin\Debug\net8.0\InterperterNaviPro.deps.json
+C:\Users\bengt\OneDrive\Skrivbord\Navipro\InterperterNaviPro\bin\Debug\net8.0\InterperterNaviPro.runtimeconfig.json
+C:\Users\bengt\OneDrive\Skrivbord\Navipro\InterperterNaviPro\bin\Debug\net8.0\InterperterNaviPro.dll
+C:\Users\bengt\OneDrive\Skrivbord\Navipro\InterperterNaviPro\bin\Debug\net8.0\InterperterNaviPro.pdb
+C:\Users\bengt\OneDrive\Skrivbord\Navipro\InterperterNaviPro\obj\Debug\net8.0\InterperterNaviPro.dll
+C:\Users\bengt\OneDrive\Skrivbord\Navipro\InterperterNaviPro\obj\Debug\net8.0\refint\InterperterNaviPro.dll
+C:\Users\bengt\OneDrive\Skrivbord\Navipro\InterperterNaviPro\obj\Debug\net8.0\InterperterNaviPro.pdb
+C:\Users\bengt\OneDrive\Skrivbord\Navipro\InterperterNaviPro\obj\Debug\net8.0\InterperterNaviPro.genruntimeconfig.cache
+C:\Users\bengt\OneDrive\Skrivbord\Navipro\InterperterNaviPro\obj\Debug\net8.0\ref\InterperterNaviPro.dll
